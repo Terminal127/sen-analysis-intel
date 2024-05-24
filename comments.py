@@ -6,7 +6,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 import time
 
-
 # Configure Chrome options and specify not to run it headless
 chromeOptions = uc.ChromeOptions()
 chromeOptions.headless = False
@@ -17,24 +16,16 @@ driver = uc.Chrome(use_subprocess=True, options=chromeOptions)
 # The URL of the Amazon product page
 url = "https://www.amazon.in/Redmi-Jade-Black-6GB-128GB/product-reviews/B0C9JFWBH7"
 
-driver.get(url)
-time.sleep(7)
-
-with open("reviews.txt", "w", encoding="utf-8") as file:
-    for page_num in range(1, 6):  # Loop through 5 pages
-        time.sleep(6)
+def get_reviews(page_num):
+    try:
         # Navigate to the review page
         page_url = f"{url}?pageNumber={page_num}"
         driver.get(page_url)
 
         # Wait for the reviews to load
-        try:
-            WebDriverWait(driver, 10).until(
-                EC.presence_of_all_elements_located((By.CSS_SELECTOR, ".review"))
-            )
-        except TimeoutException:
-            print(f"Timeout waiting for reviews to load on page {page_num}")
-            continue
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_all_elements_located((By.CSS_SELECTOR, ".review"))
+        )
 
         # Extract the reviews
         reviews = []
@@ -71,11 +62,28 @@ with open("reviews.txt", "w", encoding="utf-8") as file:
                 sub_reviews = [comment_element.text.strip() for comment_element in comment_elements]
                 review['sub_reviews'] = sub_reviews
 
-            except NoSuchElementException as e:
-                print(f"Element not found: {e}")
+            except NoSuchElementException:
+                # Continue if any element is not found
                 continue
 
             reviews.append(review)
+        
+        return reviews
+
+    except TimeoutException:
+        print(f"Timeout waiting for reviews to load on page {page_num}")
+        return []
+
+# Open the output file
+with open("reviews.txt", "w", encoding="utf-8") as file:
+    for page_num in range(1, 6):  # Loop through 5 pages
+        reviews = []
+        retries = 3
+        for _ in range(retries):
+            reviews = get_reviews(page_num)
+            if reviews:
+                break
+            time.sleep(3)  # Wait before retrying
 
         # Write the reviews to the file
         file.write(f"Page {page_num}:\n")
@@ -93,6 +101,5 @@ with open("reviews.txt", "w", encoding="utf-8") as file:
                     file.write(f" Sub-review {j+1}: {sub_review}\n")
             file.write("-" * 20 + "\n")
 
-
-
-driver.close() # Close the WebDriver instance
+# Close the WebDriver instance
+driver.close()
