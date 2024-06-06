@@ -8,6 +8,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from selenium.webdriver.chrome.options import Options
+import os
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -73,10 +74,15 @@ def go_to_next_page(driver):
 def save_reviews_to_csv(reviews, filename):
     if reviews:
         keys = reviews[0].keys()
-        with open(filename, 'w', newline='', encoding='utf-8') as output_file:
-            dict_writer = csv.DictWriter(output_file, fieldnames=keys)
-            dict_writer.writeheader()
-            dict_writer.writerows(reviews)
+        if not os.path.exists(filename):
+            with open(filename, 'w', newline='', encoding='utf-8') as output_file:
+                dict_writer = csv.DictWriter(output_file, fieldnames=keys)
+                dict_writer.writeheader()
+                dict_writer.writerows(reviews)
+        else:
+            with open(filename, 'a', newline='', encoding='utf-8') as output_file:
+                dict_writer = csv.DictWriter(output_file, fieldnames=keys)
+                dict_writer.writerows(reviews)
         logging.info(f"Saved {len(reviews)} reviews to {filename}")
     else:
         logging.info("No reviews to save.")
@@ -84,6 +90,7 @@ def save_reviews_to_csv(reviews, filename):
 # Main function
 def main(url, num_pages, output_file, wait_time, retry_count, proxy):
     options = Options()
+    options.add_argument("start-maximized")
     options.headless = True
     if proxy:
         options.add_argument(f'--proxy-server={proxy}')
@@ -97,8 +104,11 @@ def main(url, num_pages, output_file, wait_time, retry_count, proxy):
         WebDriverWait(driver, wait_time).until(
             EC.presence_of_all_elements_located((By.CSS_SELECTOR, ".review"))
         )
-
+        
+        
+        
         for page_number in range(num_pages):
+            
             logging.info(f"Extracting reviews from page {page_number + 1}")
             retries = 0
             while retries < retry_count:
@@ -134,13 +144,17 @@ def main(url, num_pages, output_file, wait_time, retry_count, proxy):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Scrape Amazon product reviews.")
-    parser.add_argument("url", help="The URL of the Amazon product review page")
-    parser.add_argument("--pages", type=int, default=1, help="Number of pages to scrape")
+    # parser.add_argument("url", help="The URL of the Amazon product review page")
+    # parser.add_argument("--pages", type=int, default=1, help="Number of pages to scrape")
     parser.add_argument("--output", default="reviews.csv", help="Output CSV file")
-    parser.add_argument("--wait", type=int, default=10, help="Wait time in seconds for elements to load")
+    # parser.add_argument("--wait", type=int, default=10, help="Wait time in seconds for elements to load")
     parser.add_argument("--retries", type=int, default=3, help="Number of retries for loading a page")
     parser.add_argument("--proxy", help="Proxy server address")
 
     args = parser.parse_args()
-
-    main(args.url, args.pages, args.output, args.wait, args.retries, args.proxy)
+    i=1
+    with open("./links.txt","r") as f:
+        for line in f:
+            print(i)
+            main(line, 15, args.output, 6, args.retries, args.proxy)
+            i+=1
