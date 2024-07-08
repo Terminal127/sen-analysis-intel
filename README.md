@@ -32,13 +32,6 @@ The script defines a main function that takes various parameters such as the URL
 
 This file contains a list of URLs, each pointing to an Amazon product review page.
 
-## Authors
-
-- [@ankitdey-marsh](https://www.github.com/ankitdey-marsh)
-- [@Terminal127](https://www.github.com/Terminal127)
-- [@debjit-mandal](https://www.github.com/debjit-mandal)
-- [@nilotpal-basu](https://www.github.com/nilotpal-basu)
-- [@MrCelestial](https://www.github.com/MrCelestial)
 
 ## Usage
 
@@ -98,4 +91,14 @@ Contributions are always welcome!
 - Implemented ULMFiT model
 - Added VADER sentiment analysis
 
+## Authors
+
+- [@ankitdey-marsh](https://www.github.com/ankitdey-marsh)
+- [@Terminal127](https://www.github.com/Terminal127)
+- [@debjit-mandal](https://www.github.com/debjit-mandal)
+- [@nilotpal-basu](https://www.github.com/nilotpal-basu)
+- [@MrCelestial](https://www.github.com/MrCelestial)
+
 Feel free to explore and run these notebooks to compare different sentiment analysis approaches.
+
+
