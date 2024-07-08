@@ -81,7 +81,7 @@ This file contains a list of URLs, each pointing to an Amazon product review pag
 - Value
 
    ```sh
-   jutyter notebook Intel_Products_Aspect_Based_Sentiment_Analysis_DeBERTa.ipynb
+   jupyter notebook Intel_Products_Aspect_Based_Sentiment_Analysis_DeBERTa.ipynb
    ```
    
 
