@@ -1,35 +1,43 @@
 # Intel Products Sentiment Analysis
 
-This project performs sentiment analysis on Intel product reviews using RoBERTa. The goal is to clean the data, analyze the sentiment of the reviews, and provide actionable insights and recommendations for improving Intel products based on customer feedback.
+This project analyzes customer sentiment towards Intel products using a multi-stage approach:
+
+## Project Overview
+
+1. **Data Gathering**: Web scraping customer reviews from Amazon using Selenium.
+
+2. **Sentiment Analysis & Visualization**:
+   - Data cleaning
+   - Dual sentiment analysis: NLTK's VADER and Hugging Face Transformers (BERTweet)
+   - Visualization of sentiment distribution
+
+3. **Aspect-Based Sentiment Analysis (ABSA)**:
+   - Identify problematic aspects in negative reviews using spaCy
+   - Analyze aspect-specific sentiment with a fine-tuned DeBERTa model
+
+4. **Insights and Actionable Recommendations**:
+   - Provide deep understanding of customer feedback
+   - Guide product improvements, marketing strategies, and customer support
 
 ## Files
-
-- `Intel_Products_Sentiment_Analysis_RoBERTa.ipynb`: The Jupyter Notebook with the analysis.
-- `reviews.csv`: The dataset with reviews.
+- `Intel_Products_Sentiment_Analysis_RoBERTa.ipynb`: Jupyter Notebook with analysis
+- `reviews.csv`: Dataset of reviews
 
 ## Instructions
-
-1. **Data Cleaning**: Remove missing values, clean the text by converting to lowercase, removing newlines, and removing punctuation.
-2. **Sentiment Analysis**: Use the RoBERTa model to analyze the sentiment of the cleaned reviews.
-3. **Insights and Recommendations**: Based on the sentiment analysis, provide insights and recommendations for product improvement.
+1. **Data Cleaning**: Remove missing values and clean text
+2. **Sentiment Analysis**: Use RoBERTa model for sentiment analysis
+3. **Insights and Recommendations**: Provide actionable insights based on analysis
 
 ## Usage
-
 1. Clone the repository:
-    ```sh
-    git clone https://github.com/Terminal127/sen-analysis-intel.git
-    ```
-
+   ```sh
+   git clone https://github.com/Terminal127/sen-analysis-intel.git
+   ```
 2. Navigate to the project directory:
-    ```sh
-    cd sen-analysis-intel
-    ```
-
+   ```sh
+   cd sen-analysis-intel
+   ```
 3. Open the Jupyter Notebook:
-    ```sh
-    jupyter notebook Intel_Products_Sentiment_Analysis_RoBERTa.ipynb
-    ```
-
-## License
-
-This project is licensed under the GNU General Public License v3.0.
+   ```sh
+   jupyter notebook Intel_Products_Sentiment_Analysis_RoBERTa.ipynb
+   ```
