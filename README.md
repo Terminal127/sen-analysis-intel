@@ -74,6 +74,17 @@ This file contains a list of URLs, each pointing to an Amazon product review pag
    - Intel_Products_Sentiment_Analysis_ULMFiT.ipynb
    - Intel_Products_Sentiment_Analysis_VADER.ipynb
 
+6. Run the ASBA for Sentiment Analysis: Analyze the sentiment of reviews using the DeBERTa model, focusing on specific aspects of Intel products:
+- Performance
+- Battery
+- Design
+- Value
+
+   ```sh
+   jutyter notebook Intel_Products_Aspect_Based_Sentiment_Analysis_DeBERTa.ipynb
+   ```
+   
+
 ## Contributing
 
 Contributions are always welcome!
