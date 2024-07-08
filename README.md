@@ -19,6 +19,17 @@ This project analyzes customer sentiment towards Intel products using a multi-st
    - Provide deep understanding of customer feedback
    - Guide product improvements, marketing strategies, and customer support
 
+# Python Script:
+
+**The script defines a main function that takes various parameters such as the URL of the Amazon product review page, the number of pages to scrape, the output CSV file name, wait time for elements to load, the number of retries, and an optional proxy server address.**:
+- The script sets up a headless browser using Selenium to navigate to the given URL and scrape reviews from the specified number of pages.
+- The scraped reviews are saved to a CSV file.
+
+# links.txt File:
+
+**This file contains a list of URLs, each pointing to an Amazon product review page.**
+
+
 ## Files
 - `Intel_Products_Sentiment_Analysis_RoBERTa.ipynb`: Jupyter Notebook with analysis
 - `reviews.csv`: Dataset of reviews
