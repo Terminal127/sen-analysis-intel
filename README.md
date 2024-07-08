@@ -19,6 +19,8 @@ This project analyzes customer sentiment towards Intel products using a multi-st
    - Provide deep understanding of customer feedback
    - Guide product improvements, marketing strategies, and customer support
 
+## Documentation
+
 # Python Script:
 
 **The script defines a main function that takes various parameters such as the URL of the Amazon product review page, the number of pages to scrape, the output CSV file name, wait time for elements to load, the number of retries, and an optional proxy server address.**:
@@ -30,14 +32,14 @@ This project analyzes customer sentiment towards Intel products using a multi-st
 **This file contains a list of URLs, each pointing to an Amazon product review page.**
 
 
-## Files
-- `Intel_Products_Sentiment_Analysis_RoBERTa.ipynb`: Jupyter Notebook with analysis
-- `reviews.csv`: Dataset of reviews
 
-## Instructions
-1. **Data Cleaning**: Remove missing values and clean text
-2. **Sentiment Analysis**: Use RoBERTa model for sentiment analysis
-3. **Insights and Recommendations**: Provide actionable insights based on analysis
+## Authors
+
+- [@ankitdey-marsh](https://www.github.com/ankitdey-marsh)
+- [@Terminal127](https://www.github.com/Terminal127)
+- [@debjit-mandal](https://www.github.com/debjit-mandal)
+- [@nilotpal-basu](https://www.github.com/nilotpal-basu)
+- [@MrCelestial](https://www.github.com/MrCelestial)
 
 ## Usage
 1. Clone the repository:
@@ -48,7 +50,19 @@ This project analyzes customer sentiment towards Intel products using a multi-st
    ```sh
    cd sen-analysis-intel
    ```
+
+3. Open the Jupyter Notebook:
+   ```sh
+   python3 comments.py
+   ```
+
 3. Open the Jupyter Notebook:
    ```sh
    jupyter notebook Intel_Products_Sentiment_Analysis_RoBERTa.ipynb
    ```
+
+
+## Contributing
+
+Contributions are always welcome!
+
