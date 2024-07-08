@@ -51,14 +51,15 @@ This project analyzes customer sentiment towards Intel products using a multi-st
    cd sen-analysis-intel
    ```
 
-3. Open the Jupyter Notebook:
+3. Run the python file:
    ```sh
    python3 comments.py
+   # it will generate reviews.csv
    ```
 
-3. Open the Jupyter Notebook:
+3. Now we need to clean it using this file:
    ```sh
-   jupyter notebook Intel_Products_Sentiment_Analysis_RoBERTa.ipynb
+   python3 clean_reviews.py
    ```
 
 
