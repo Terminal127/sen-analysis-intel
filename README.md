@@ -1,3 +1,6 @@
+![Logo](https://github.com/Terminal127/OCR/blob/main/Default_sentimental_analysis_using_machine_learning_0.jpg)
+
+
 # Intel Products Sentiment Analysis
 
 This project analyzes customer sentiment towards Intel products using a multi-stage approach:
