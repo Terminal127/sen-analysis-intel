@@ -60,6 +60,7 @@ This project analyzes customer sentiment towards Intel products using a multi-st
 3. Now we need to clean it using this file:
    ```sh
    python3 clean_reviews.py
+   # it will generate cleaned_reviews_textblob.csv
    ```
 
 
