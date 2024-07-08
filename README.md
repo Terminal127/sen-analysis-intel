@@ -1,4 +1,4 @@
-![Logo](https://github.com/Terminal127/OCR/blob/main/Default_sentimental_analysis_using_machine_learning_0.jpg)
+![Logo](https://github.com/Terminal127/sen-analysis-intel/blob/main/Default_sentimental_analysis_using_machine_learning_0.jpg)
 
 
 # Intel Products Sentiment Analysis
