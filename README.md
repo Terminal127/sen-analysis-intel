@@ -3,7 +3,7 @@
 
 # Intel Products Sentiment Analysis
 
-This project analyzes customer sentiment towards Intel products using a multi-stage approach:
+This project analyzes customer sentiment towards Intel products using a multi-stage approach.
 
 ## Project Overview
 
@@ -76,6 +76,7 @@ This file contains a list of URLs, each pointing to an Amazon product review pag
 - Design
 - Value
 
+**Example:**
    ```sh
    jupyter notebook Intel_Products_Aspect_Based_Sentiment_Analysis_DeBERTa.ipynb
    ```
@@ -101,6 +102,8 @@ Contributions are always welcome!
 - [@debjit-mandal](https://www.github.com/debjit-mandal)
 - [@nilotpal-basu](https://www.github.com/nilotpal-basu)
 - [@MrCelestial](https://www.github.com/MrCelestial)
+
+------------------------------------------------------------------------------------------------------------
 
 Feel free to explore and run these notebooks to compare different sentiment analysis approaches.
 
