@@ -21,17 +21,16 @@ This project analyzes customer sentiment towards Intel products using a multi-st
 
 ## Documentation
 
-# Python Script:
+### Python Script:
 
-**The script defines a main function that takes various parameters such as the URL of the Amazon product review page, the number of pages to scrape, the output CSV file name, wait time for elements to load, the number of retries, and an optional proxy server address.**:
+The script defines a main function that takes various parameters such as the URL of the Amazon product review page, the number of pages to scrape, the output CSV file name, wait time for elements to load, the number of retries, and an optional proxy server address.
+
 - The script sets up a headless browser using Selenium to navigate to the given URL and scrape reviews from the specified number of pages.
 - The scraped reviews are saved to a CSV file.
 
-# links.txt File:
+### links.txt File:
 
-**This file contains a list of URLs, each pointing to an Amazon product review page.**
-
-
+This file contains a list of URLs, each pointing to an Amazon product review page.
 
 ## Authors
 
@@ -42,10 +41,12 @@ This project analyzes customer sentiment towards Intel products using a multi-st
 - [@MrCelestial](https://www.github.com/MrCelestial)
 
 ## Usage
+
 1. Clone the repository:
    ```sh
    git clone https://github.com/Terminal127/sen-analysis-intel.git
    ```
+
 2. Navigate to the project directory:
    ```sh
    cd sen-analysis-intel
@@ -57,14 +58,33 @@ This project analyzes customer sentiment towards Intel products using a multi-st
    # it will generate reviews.csv
    ```
 
-3. Now we need to clean it using this file:
+4. Clean the data:
    ```sh
    python3 clean_reviews.py
    # it will generate cleaned_reviews_textblob.csv
    ```
 
+5. Run the Jupyter Notebooks for different models:
+   - Intel_Products_Sentiment_Analysis_CNN.ipynb
+   - Intel_Products_Sentiment_Analysis_FastText.ipynb
+   - Intel_Products_Sentiment_Analysis_LSTM.ipynb
+   - Intel_Products_Sentiment_Analysis_NLTK.ipynb
+   - Intel_Products_Sentiment_Analysis_NLTK_With_translation.ipynb
+   - Intel_Products_Sentiment_Analysis_RoBERTa.ipynb
+   - Intel_Products_Sentiment_Analysis_ULMFiT.ipynb
+   - Intel_Products_Sentiment_Analysis_VADER.ipynb
 
 ## Contributing
 
 Contributions are always welcome!
 
+## Recent Updates
+
+- Added CNN model for sentiment analysis
+- Implemented FastText and LSTM models
+- Added NLTK analysis with and without translation
+- Incorporated RoBERTa model for sentiment analysis
+- Implemented ULMFiT model
+- Added VADER sentiment analysis
+
+Feel free to explore and run these notebooks to compare different sentiment analysis approaches.
